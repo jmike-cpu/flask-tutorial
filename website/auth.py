@@ -2,7 +2,7 @@ from flask import Blueprint, render_template
 
 auth = Blueprint('auth',__name__)
 
-@auth.route('/login')
+@auth.route('/login', methods=['GET','POST'])
 def login():
     return render_template("login.html")
 
@@ -10,8 +10,8 @@ def login():
 def logout():
     return "<p>logout</p>"
 
-@auth.route('/signup')
-def sign_up():
-    return render_template("signup.html")
+@auth.route('/signUp', methods=['GET','POST'])
+def signUp():
+    return render_template("signUp.html")
 
 
